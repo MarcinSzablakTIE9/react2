@@ -23,12 +23,22 @@ class Movies extends Component{
         const movies = this.state.movies.filter(i => i._id !== movie._id)
         this.setState({movies})
     }
+    
+    meter(movies){
+        const moviesCount = movies.length;
+
+        return(
+            <p>{moviesCount}</p>
+        )
+
+    }
 
     //Show movies from {this.state.movies[0].title}
 
     render(){
         return (
             <table>
+                <>{this.meter(this.state.movies)}</>
                 <>{this.allMovies()}</>
             </table>
         )
